@@ -1,10 +1,10 @@
-# PLONK 
-![Build Status](https://github.com/dusk-network/plonk/workflows/Continuous%20integration/badge.svg)
-[![Repository](https://img.shields.io/badge/github-plonk-blueviolet?logo=github)](https://github.com/dusk-network/plonk)
-[![Documentation](https://img.shields.io/badge/docs-plonk-blue?logo=rust)](https://docs.rs/plonk/)
+# PlonkUp 
+![Build Status](https://github.com/dusk-network/plonkup/workflows/Continuous%20integration/badge.svg)
+[![Repository](https://img.shields.io/badge/github-plonkup-blueviolet?logo=github)](https://github.com/dusk-network/plonkup)
+[![Documentation](https://img.shields.io/badge/docs-plonkup-blue?logo=rust)](https://docs.rs/plonkup/)
 
 
-_This is a pure Rust implementation of the PLONK proving system over BLS12-381_
+_This is a pure Rust implementation of the PlonkUp proving system over BLS12-381. More details on this proving system can be found in this [paper](https://eprint.iacr.org/2022/086.pdf)._
 
 
 This library contains a modularised implementation of KZG10 as the default
@@ -126,38 +126,6 @@ TestCircuit::verify(
 ).unwrap();
 ```
 
-### Features
-
-This crate includes a variety of features which will briefly be explained below:
-- `alloc`: Enables the usage of an allocator and with it the capability of performing `Proof` constructions and 
-  verifications. Without this feature it **IS NOT** possible to prove or verify anything. 
-  Its absence only makes `dusk-plonk` export certain fixed-size data structures such as `Proof` which can be useful in no_std environments where we don't have allocators either.
-- `std`: Enables `std` usage as well as `rayon` parallelization in some proving and verifying ops. 
-  It also uses the `std` versions of the elliptic curve deps, which utilizes the `parallel` feature 
-  from `dusk-bls12-381`. By default, this is the feature that comes enabled with the crate.
-- `trace`: Enables the Circuit debugger tooling. This is essentially the capability of using the 
-  `StandardComposer::check_circuit_satisfied` function. The function will output information about each circuit gate until 
-  one of the gates does not satisfy the equation, or there are no more gates. If there is an unsatisfied gate 
-  equation, the function will panic and return the gate number.
-- `trace-print`: Goes a step further than `trace` and prints each `gate` component data, giving a clear overview of all the 
-  values which make up the circuit that we're constructing. 
-  __The recommended method is to derive the std output, and the std error, and then place them in text file 
-    which can be used to efficiently analyse the gates.__
-- `canon`: Enables `canonical` serialization for particular data structures, which is very useful in integrating  this library within the rest of the Dusk stack - especially for storage purposes.
-
-
-## Documentation
-
-There are two main types of documentation in this repository:
-
-- **Crate documentation**. This provides info about all of the functions that the library provides, as well
-  as the documentation regarding the data structures that it exports. To check this, please feel free to go to
-  the [documentation page](https://docs.rs/dusk-plonk/) or run `make doc` or `make doc-internal`.
-
-- **Notes**. This is a specific subset of documentation which explains the key mathematical concepts
-  of PLONK and how they work with mathematical demonstrations. To check it, run `make doc` and open the resulting docs,
-  which will be located under `/target` with your browser.
-
 ## Performance
 
 Benchmarks taken on `Apple M1`
@@ -175,7 +143,7 @@ For more results, please run `cargo bench` to get a full report of benchmarks in
 
 ## Licensing
 
-This code is licensed under Mozilla Public License Version 2.0 (MPL-2.0). Please see [LICENSE](https://github.com/dusk-network/plonk/blob/master/LICENSE) for further info.
+This code is licensed under Mozilla Public License Version 2.0 (MPL-2.0). Please see [LICENSE](https://github.com/dusk-network/plonkup/blob/main/LICENSE) for further info.
 
 ## About
 
@@ -183,5 +151,5 @@ Implementation designed by the [dusk](https://dusk.network) team.
 
 ## Contributing
 
-- If you want to contribute to this repository/project please, check [CONTRIBUTING.md](https://github.com/dusk-network/plonk/blob/master/CONTRIBUTING.md)
+- If you want to contribute to this repository/project please, check [CONTRIBUTING.md](https://github.com/dusk-network/plonkup/blob/main/CONTRIBUTING.md)
 - If you want to report a bug or request a new feature addition, please open an issue on this repository.
