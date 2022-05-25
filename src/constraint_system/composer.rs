@@ -970,8 +970,12 @@ mod tests {
         // Preprocess
         verifier.preprocess(&ck).unwrap();
 
+        let pi_indexes = verifier.composer_mut().public_input_indexes();
+
         for proof in proofs {
-            assert!(verifier.verify(&proof, &vk, &public_inputs).is_ok());
+            assert!(verifier
+                .verify(&proof, &vk, &public_inputs, &pi_indexes)
+                .is_ok());
         }
     }
 
@@ -1048,7 +1052,11 @@ mod tests {
 
         let proof = prover.prove(&ck, &mut OsRng)?;
 
-        assert!(verifier.verify(&proof, &vk, &public_inputs).is_ok());
+        let pi_indexes = verifier.composer_mut().public_input_indexes();
+
+        assert!(verifier
+            .verify(&proof, &vk, &public_inputs, &pi_indexes)
+            .is_ok());
 
         Ok(())
     }

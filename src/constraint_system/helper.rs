@@ -90,8 +90,10 @@ pub(crate) fn gadget_tester(
     // Preprocess circuit
     verifier.preprocess(&ck)?;
 
+    let pi_indexes = verifier.composer_mut().public_input_indexes();
+
     // Verify proof
-    verifier.verify(&proof, &vk, &public_inputs)
+    verifier.verify(&proof, &vk, &public_inputs, &pi_indexes)
 }
 
 /// Takes a generic gadget function with no auxillary input and
@@ -153,6 +155,8 @@ pub(crate) fn gadget_plonkup_tester(
     // Preprocess circuit
     verifier.preprocess(&ck)?;
 
+    let pi_indexes = verifier.composer_mut().public_input_indexes();
+
     // Verify proof
-    verifier.verify(&proof, &vk, &public_inputs)
+    verifier.verify(&proof, &vk, &public_inputs, &pi_indexes)
 }
