@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Add the blinding factors to provide Zero-Knowledge [#650](https://github.com/dusk-network/plonk/issues/650)
+- Add the `public inputs` into the transcript [#676](https://github.com/dusk-network/plonk/issues/676)
 
 ### Changed
 
@@ -24,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Fix `logic_gate` for `bit_num` = 256 [#678](https://github.com/dusk-network/plonk/pull/678)
+- Apply patch to fix a circuit compilation error [#4](https://github.com/dusk-network/plonkup/issues/4)
 
 ## [0.10.0] - 24-02-22
 

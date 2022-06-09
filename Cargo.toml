@@ -35,7 +35,7 @@ criterion = "0.3"
 tempdir = "0.3"
 
 [[bench]]
-name = "plonk"
+name = "plonkup"
 harness = false
 
 [features]
