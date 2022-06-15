@@ -2,12 +2,14 @@
 ![Build Status](https://github.com/dusk-network/plonkup/workflows/Continuous%20integration/badge.svg)
 [![Repository](https://img.shields.io/badge/github-plonkup-blueviolet?logo=github)](https://github.com/dusk-network/plonkup)
 [![Documentation](https://img.shields.io/badge/docs-plonkup-blue?logo=rust)](https://docs.rs/plonkup/)
-
+[![Code Coverage](https://codecov.io/gh/dusk-network/plonkup/branch/master/graph/badge.svg)](https://codecov.io/gh/dusk-network/plonkup)
+[![GitHub Issues](https://img.shields.io/github/issues-raw/dusk-network/plonkup?style=plastic)](https://github.com/dusk-network/plonkup)
+[![License](https://img.shields.io/github/license/dusk-network/plonkup?color=%230E55EF)](https://github.com/dusk-network/plonkup/blob/master/LICENSE)
 
 _This is a pure Rust implementation of the PlonkUp proving system over BLS12-381. More details on this proving system can be found in this [paper](https://eprint.iacr.org/2022/086.pdf)._
 
 
-This library contains a modularised implementation of KZG10 as the default
+This library contains a modularized implementation of KZG10 as the default
 polynomial commitment scheme.
 
 **DISCLAIMER**: This library is currently unstable and still needs to go through
@@ -16,7 +18,7 @@ an exhaustive security analysis. Use at your own risk.
 ## Usage
 
 ```rust
-use dusk_plonk::prelude::*;
+use plonkup::prelude::*;
 use rand_core::OsRng;
 
 // Implement a circuit that checks:
