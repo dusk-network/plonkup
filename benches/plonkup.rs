@@ -7,7 +7,7 @@
 #![allow(clippy::many_single_char_names)]
 
 use criterion::{black_box, criterion_group, criterion_main, Criterion};
-use dusk_plonk::prelude::*;
+use plonkup::prelude::*;
 use rand_core::OsRng;
 
 #[derive(Debug, Clone, Copy)]

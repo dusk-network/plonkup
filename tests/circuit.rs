@@ -4,7 +4,7 @@
 //
 // Copyright (c) DUSK NETWORK. All rights reserved.
 
-use dusk_plonk::prelude::*;
+use plonkup::prelude::*;
 use rand_core::OsRng;
 use std::fs;
 
