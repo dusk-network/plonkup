@@ -126,7 +126,7 @@ impl VerifierData {
 /// # Example
 ///
 /// ```
-/// use dusk_plonk::prelude::*;
+/// use plonkup::prelude::*;
 /// use rand_core::OsRng;
 ///
 /// fn main() -> Result<(), Error> {
